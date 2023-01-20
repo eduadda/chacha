@@ -1,0 +1,252 @@
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+
+}
+
+body,#main {
+  width: 100%;
+  height: 100vh;
+}
+#main {
+
+  display: flex;
+  align-items: center;
+}
+
+
+
+
+
+
+
+
+#nav{
+  width: 55px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  background-color: rgb(74, 74, 74);
+}
+.upnav{
+  display: flex;
+  align-items: center;
+  /* background-color: aqua; */
+  width: 100%;
+  flex-direction: column;
+}
+#nav a{
+  text-decoration: none;
+  color: rgb(155, 155, 155);
+  margin: 9px 0;
+  /* width: 100%; */
+  padding:0 8px;
+  
+}
+
+#nav a:hover{
+  color: aliceblue;
+  border-left: 2px solid aliceblue;
+}
+#nav i{
+  font-size: 30px;
+  text-align: center;
+  width: 100%;
+  
+}
+#nav>.upnav>a#xxx{
+  color: aliceblue;
+  border-left: 2px solid aliceblue;
+}
+.downnav{
+  display: flex;
+  align-items: center;
+  /* background-color: aqua; */
+  width: 100%;
+  flex-direction: column;
+}
+
+
+
+.left{
+  font-style: italic;
+  
+  /* display: none; */
+  width:300px;
+  height: 100%;
+  background-color: rgb(46, 46, 46);
+  color: rgb(155, 155, 155);
+}
+.right{
+  width: 100%;
+  height: 100%;
+  background-color: rgb(34, 32, 32);
+}
+.explore{
+  padding: 15px 30px;
+  color: aliceblue;
+}
+.bada-folder{
+  /* background-color: bisque; */
+  height: 85%;
+}
+.newFolder{
+  padding: 8px 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* background-color: antiquewhite; */
+}.newFolder>.newF-icon{
+  color:rgb(155, 155, 155) ;
+  text-decoration: none;
+}
+.newFolder>.newF-icon>i{
+  margin: 0 6px;
+  font-size: 17px;
+}
+.newFolder>.newF-icon i:hover, .file:hover {
+  color: aliceblue;
+}
+.file{
+  display: flex;
+  /* justify-content: space-between; */
+  align-items: center;
+  margin: 8px 17px;
+  height: 20px;
+  position: relative;
+  /* background-color: rgb(53, 69, 69); */
+  /* border-bottom:1px solid rgba(75, 75, 75, 0.614) ; */
+}
+.file>.icon{
+  position: absolute;
+  right: 5px;
+}
+.file>a{
+  color:rgb(155, 155, 155);
+  text-decoration: none;
+}
+.file>a:focus{
+  color: aliceblue;
+}
+
+.file-icon{
+  margin:0 5px;
+}
+.folder-icon{
+  margin-right: 5px;
+}
+.file>.icon>a{
+  text-decoration: none;
+}
+.file>.icon>a i{
+  margin: 0 6px;
+  padding: 0;
+  display: none;
+  color: aliceblue;
+}
+.file:hover .icon>a>i{
+  display: initial;
+  
+}
+form{
+  width: 100%;
+ 
+  padding:8px 16px;
+  /* background-color: pink; */
+  display: flex;
+  justify-content: center;
+  display: none;
+
+}
+form>input{
+  width: 100%;
+  padding: 6px 13px;
+  border-radius: 6px;
+  border: none;
+}
+.r-nav{
+  width: 100%;
+  height: 50px;
+  display:flex;
+  align-items: center;
+  background-color: rgb(46, 46, 46);
+  color: aliceblue;
+  border-bottom: 1px solid rgba(96, 96, 96, 0.632);
+}
+.r-nav>#block{
+  height: 105%;
+  padding:0 20px;
+  background-color: rgb(34, 32, 32);
+  width: fit-content;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 1px solid rgba(58, 58, 58, 0.738);
+  border-right: 1px solid rgb(75, 75, 75);
+}
+.right{
+  display: flex;
+  flex-direction: column;
+}
+#block>h4{
+  margin-right: 15px;
+}
+#block a{
+  text-decoration: none;
+  /* padding: 2px; */
+ 
+  color: rgb(155, 155, 155) ;
+  border-radius: 5px;
+}
+#block a>i{
+  text-align: center;
+  padding: 2px;
+}
+#block a:hover{
+  background-color: rgb(93, 93, 93);
+}
+.body,textarea{
+  width: 95%;
+  height: 95%;
+  background-color: transparent;
+}
+textarea{
+  border: none;
+  outline: none;
+  padding: 30px 0;
+  line-height: 1.2;
+  color: aliceblue;
+  font-size: 19px;
+}
+
+.body>img{
+  width: 45vw;
+  filter: grayscale(100%);
+  position: absolute;
+  top: 50%;
+  opacity: .1;
+  right: 50%;
+  transform: translate(50%, -50%);
+  z-index: 999;
+}
+
+.bodyForm{
+  /* width: 90%;
+  height: 90%; */
+  display: initial;
+}
+
+.inputButton{
+  height: 30px;
+  width: 70px;
+  background-color: royalblue;
+  top:13%;left:95%;
+  transform: translate(-50%,-50%);
+  position: absolute;
+  text-align: center;
+  cursor: pointer;
+}

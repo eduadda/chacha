@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+  </head>
+  <body>
+    <div id="main">
+      <div id="nav">
+        <div class="upnav">
+          <a id="xxx" href="/home"><i  class="ri-folders-line"></i></a>
+   
+          <a href="#"><i class="ri-search-line"></i></a>
+          <a href="#"><i class="ri-wireless-charging-line"></i></a>
+          <a href="#"><i class="ri-bug-line"></i></a>
+          <a href="#"><i class="ri-layout-grid-fill"></i></a>
+        </div>
+        <div class="downnav">
+          <a href="#"><i class="ri-shield-user-line"></i></a>
+          <a href="#"><i class="ri-settings-5-line"></i></a>                  
+        </div>
+      
+      </div>
+      <div class="left">
+        <h3 class="explore">EXPLORE</h3>
+
+        <div class="bada-folder">
+          <div class="newFolder">
+            <h3>New Folder</h3>
+            <div class="newF-icon">
+              <i class="ri-add-circle-line"></i>
+              <i class="ri-folder-add-line"></i>
+              <i class="ri-refresh-line"></i>
+            </div>
+
+          </div>
+
+<!-- file space -->
+          <form class="filename" action="createfile">
+
+            <input name="filename" type="text" placeholder="File Name">
+          </form>
+
+<!-- folder space -->
+          <form class="foldername" action="createfolder">
+
+            <input name="foldername" type="text" placeholder="Folder Name">
+          </form>
+
+
+<!-- input in ejs -->
+          <div class="folder">
+            
+            <% folder.forEach((val)=>{ %>
+              <div class="file">
+                <%if(val.isFolder){%>
+                  <i class="ri-folder-upload-line folder-icon"></i>
+                  
+                <%}else{%>
+                  <i class="ri-file-line file-icon"></i>
+                 <%}  %> 
+                <a href="/file/<%= val.name  %>"><h4><%= val.name%></h4></a>
+                <div class="icon">
+                  <a href=""><i class="ri-pencil-fill"></i></a>
+                  <a href="/deleat/<%= val.name %>/<%=val.isFolder ? 1 : 0 %>"><i class="ri-delete-bin-2-fill"></i></a>
+
+                </div>
+              </div>
+            <% }) %>
+
+            
+          </div>
+
+        </div>
+
+      </div>
+      <div class="right">
+        <nav class="r-nav">
+          <div id="block">
+            <h4 style="font-style: italic; letter-spacing: 1px; ">Untitled.txt</h4>
+              <i class="ri-close-line"></i>
+              
+          </div>
+        </nav>
+        
+      </div>
+    </div>
+
+
+    <script>
+      let flag=0;
+      const fileName=document.querySelector('.filename');
+      const folderName=document.querySelector('.foldername');
+      let fileFlag=0;
+      let folderFlag=0;
+
+      const turnOff = ()=>{
+        fileName.style.display="none";
+        folderName.style.display="none";
+      }
+
+
+      document.querySelector('.ri-add-circle-line')
+      .addEventListener('click',()=>{
+        if(!fileFlag){
+          turnOff();
+          fileName.style.display="flex";
+          fileFlag=1;
+          
+        }else{
+          turnOff();
+          fileFlag=0;
+        }
+
+
+      })
+
+
+      document.querySelector('.ri-folder-add-line')
+      .addEventListener('click',()=>{
+        if(!folderFlag){
+          turnOff();
+          folderName.style.display="flex";
+          folderFlag=1;
+          
+        }else{
+          turnOff();
+          folderFlag=0;
+        }
+        
+        
+      })
+
+
+      // document.querySelector('.ri-add-circle-line')
+      // .addEventListener('click',()=>{
+      //   if(!flag){
+      //     document.querySelector('form').style.display="flex"
+      //     flag=1;
+      //   }else{
+      //     document.querySelector('form').style.display="none"
+      //     flag=0;
+      //   }
+      // })
+    </script>
+  </body>
+</html>
